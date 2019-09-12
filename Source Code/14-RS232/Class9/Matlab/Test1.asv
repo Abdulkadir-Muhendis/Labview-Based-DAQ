@@ -1,0 +1,11 @@
+ser = serial('COM1','BaudRate',9600,'DataBits',8);
+fopen(ser)
+% while(1)
+for i=1:10
+    fwrite(ser,4);% asci C
+end
+fclose(ser); 
+
+
+
+out = fscanf(s)
