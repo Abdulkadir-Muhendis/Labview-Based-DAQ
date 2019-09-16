@@ -1,0 +1,45 @@
+VERSION
+8
+
+COMMSETTINGS
+0
+COM31
+COM3
+9600
+2
+63
+4
+0
+0
+
+COMMDISPLAY
+0
+
+SEND
+0
+Count 1-Wire
+31
+0
+5
+
+SEND
+1
+Search 1-Wire
+32
+0
+5
+
+SEND
+2
+Verify ID
+33
+0
+5
+
+SEND
+3
+Measure
+34
+0
+5
+
