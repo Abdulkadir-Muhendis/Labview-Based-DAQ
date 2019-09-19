@@ -1,0 +1,101 @@
+VERSION
+8
+
+COMMSETTINGS
+0
+COM27
+COM2
+9600
+2
+63
+4
+0
+0
+
+COMMDISPLAY
+0
+
+SEND
+0
+Write Enable
+41
+0
+5
+
+SEND
+1
+Write Disable
+42
+0
+5
+
+SEND
+2
+Read SR
+43
+0
+5
+
+SEND
+3
+Sector Erase
+44
+0
+5
+
+SEND
+4
+Block Erase
+45
+0
+5
+
+SEND
+5
+Chip Erase
+46
+0
+5
+
+SEND
+6
+Power Down
+47
+0
+5
+
+SEND
+7
+Power Up
+48
+0
+5
+
+SEND
+8
+MFQ Device ID
+49
+0
+5
+
+SEND
+9
+Jedec ID
+4A
+0
+5
+
+SEND
+10
+Read Data
+4B
+0
+5
+
+SEND
+11
+Page Prog
+4C
+0
+5
+
