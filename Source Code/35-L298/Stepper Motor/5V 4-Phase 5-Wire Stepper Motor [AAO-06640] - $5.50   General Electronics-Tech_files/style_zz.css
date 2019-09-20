@@ -1,0 +1,65 @@
+#outlink {
+	margin:0 auto 0 auto;
+	height: 100px !important;
+}
+#nums17Track {
+	margin-top: 10px;
+}
+.index_ad ul {
+position:relative;
+}
+
+.index_ad ul.index_ad_img li {
+position:absolute;
+z-index:1;
+visibility:hidden;
+}
+
+.index_ad ul.index_ad_img li.first {
+z-index:2;
+visibility:visible;
+}
+
+.index_ad ul.index_ad_btn {
+position:absolute;
+z-index:2;
+left:0;
+bottom:0;
+font-weight:bold;
+color:#fff;
+height:20px;
+line-height:20px;
+width:100%;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+padding: 0;
+margin-bottom: 0;
+margin-left: 0;
+}
+
+.index_ad ul.index_ad_btn li {
+float:left;
+background:#000;
+width:20px;
+text-align:center;
+cursor:pointer;
+}
+
+.index_ad ul.index_ad_btn li.first {
+background:#fff;
+color:#000;
+filter:alpha(opacity=70);
+-moz-opacity:0.7;
+-khtml-opacity: 0.7;
+opacity: 0.7;
+}
+
+#indexDefault {
+width:100%;
+}
+
+.font_red {
+color:#f00;
+}

@@ -1,0 +1,79 @@
+.leftBoxContainer{
+background-color:#F2F2EE!important;
+margin:4px 0 10px;
+padding:0;
+
+
+
+}
+.sidebox-header-left{
+margin:auto 0;
+padding-bottom:0em;
+padding-left:1em;
+padding-right:1em;
+
+
+}
+#searchContent{
+
+background-color:#F2F2EE!important;
+}
+h3.leftBoxHeading{
+   color:#000000;
+   font-size:16px;
+
+
+
+}
+.sideBoxContent{
+background-color:#F2F2EE!important;
+
+}
+#categoriesContent{
+   margin:auto 0;
+padding-bottom:0.75em;
+padding-left:1em;
+padding-right:0.5em;
+
+
+
+}
+
+#categoriesContent .category-subs-child a{
+   
+    font-size: 11px;
+    font-weight: 400;
+}
+
+
+#shoppingcartHeading{
+  display:none;
+
+}
+#cartBoxEmpty{
+   color:red;
+   width: 99%;
+}
+#accountHistoryDefault{
+    width: 100%;
+}
+#tellafriend{
+background-color:#F2F2EE!important;
+
+
+}
+.sidebox-header-left{
+  color:#000000;
+   font-size:14px;
+
+
+}
+#information,#specials{background-color:#F2F2EE!important;}
+ #googletrans{
+ background:#F2F2EE;
+ 
+ 
+ }
+ #informationContent li{
+     line-height: 20px;
+}

@@ -1,0 +1,239 @@
+#un .buttons {
+	text-align: right; 
+	margin-top: 10px;
+	}
+
+#un dl.pageresults {
+	margin: 20px 0 0 0;
+	padding: 0;
+	}
+	
+#un dd {
+	margin: 0;
+	padding: 0;
+	}
+
+#un form {
+	padding: 0;
+	}
+
+#un fieldset {
+	border: 1px solid #9a9a9a;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	}
+
+#un legend {
+	border: 1px solid #9a9a9a;
+	background-color: #abbbd3;
+	padding: 5px;
+	}
+
+#un label.block {
+	display: block;
+	color: #930;
+	margin-top: 7px;
+	}
+
+#un label.inline {
+	display: inline;
+	color: #930;
+	}
+
+#un form.control, #un form.moveto {
+	margin: 0 0 30px 0;
+	padding: 0;
+	}
+
+#un form.control fieldset {
+	border: 0;
+	margin: 2px 0 1px 0;
+	padding: 0;
+	}
+
+#un form.control label {
+	display: block;
+	color: #000;
+	margin-top: 0px;
+	}
+
+#un form.control div.single {
+	padding: 3px 5px;  
+	}
+
+#un form.control div.multiple {
+	padding: 3px 5px; 
+	float: left; 
+	}
+
+#un form.control div.multiple label {
+	display: block;
+	}
+
+#un div.clearleft {
+	padding: 0; 
+	margin: 0; 
+	clear:left; 
+	}
+
+#un .s {
+	width: 50px;
+	}
+
+#un .m {
+	width: 100px;
+	}
+
+#un .l {
+	width: 175px;
+	}
+
+#un .xl {
+	width: 300px;
+	}
+
+#un table.productlist {
+	width: 100%;
+	border: 1px solid #9a9a9a;
+	}
+
+#un table.productlist tr.heading {
+	height: 25px;
+	background: #abbbd3;
+	background-image: url(../images/tile_back.jpg);
+	background-repeat: repeat-x;
+	color: #fff;
+	font-size: small;
+	}
+	
+#un .footnote {
+	color: #666;
+	font-size: small;
+	padding-top: 0;
+	margin-top: 20px;
+	}
+
+#un table.productlist th {
+	padding: 2px;
+	}
+
+#un table.productlist th.right {
+	text-align: center;
+	}
+
+#un table.productlist th.center {
+	text-align: center;
+	}
+
+#un table.productlist td {
+	border-top: 1px solid #9a9a9a;
+	padding: 2px;
+	}
+	
+#un table.productlist td.odd {
+	}
+	
+#un table.productlist td.odd-right {
+	text-align: right;
+	}
+	
+#un table.productlist td.odd-center {
+	text-align: center;
+	}
+	
+#un table.productlist td.even {
+	background-color: #eff4f8;
+	}
+	
+#un table.productlist td.even-right {
+	background-color: #eff4f8;
+	text-align: right;
+	}
+	
+#un table.productlist td.even-center {
+	background-color: #eff4f8;
+	text-align: center;
+	}
+
+#un div.tableheading {
+	height: 25px;
+	background: #abbbd3;
+	background-image: url(../images/tile_back.jpg);
+	background-repeat: repeat-x;
+	color: #fff;
+	font-size: small;
+	font-weight: bold;
+	border: 1px solid #9a9a9a;
+	padding: 3px 6px 0px 6px;
+	}
+
+#un div.wishlist-even {
+	margin: 0px 0px 0px 0px;
+	padding: 10px; 
+	border: 1px solid #9a9a9a;
+	border-top: 0px;
+	background-color: #eff4f8;
+	}
+
+#un div.wishlist-odd {
+	margin: 0px 0px 0px 0px;
+	padding: 10px; 
+	border: 1px solid #9a9a9a;
+	border-top: 0px;
+	}
+
+#un img.productlist {
+	margin: 0px 15px 15px 0px;
+	float: left;
+	}
+
+#un div.wishlistfields {
+	margin: 10px 0px 0px 0px;
+	padding: 10px 0px; 
+	border-top: 1px dotted #9a9a9a;
+	}
+
+#un ul {
+	list-style: none none outside;
+	padding-left: 0em;
+	margin-left: 0px;
+	margin-top: 0px;
+	}
+
+#un ol {
+	padding-left: 2.2em;
+	margin-left: 0px;
+	margin-top: 0px;
+	text-indent: -0.4em;
+	}
+
+#un ol li {
+	line-height: 1.4em;
+	}
+
+#un .inputrequirement {
+	color: #379;
+	}
+
+#un p.inputrequirement {
+	text-align: right;
+	}
+
+#un .notabene { 
+	color: #379;
+	font-weight: bold;
+	}
+	
+#un .price { 
+	font-weight: bold;
+	}
+
+/*
+label.tabbed-m {
+	display: inline;
+	float: left; 
+	width: 7em; 
+	text-align: left;
+	clear: left;
+	}
+*/

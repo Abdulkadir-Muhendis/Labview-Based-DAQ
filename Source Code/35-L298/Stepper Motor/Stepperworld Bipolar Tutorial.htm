@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0059)http://www.stepperworld.com/Tutorials/pgBipolarTutorial.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<title>Stepperworld Bipolar Tutorial</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #CCCCCC;
+}
+-->
+</style><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/document_iterator.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/find_proxy.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/get_html_text.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/global_constants.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/name_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/number_injection_builder.js"></script><script src="chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/string_finder.js"></script><meta name="document_iterator.js"><meta name="find_proxy.js"><meta name="get_html_text.js"><meta name="global_constants.js"><meta name="name_injection_builder.js"><meta name="number_injection_builder.js"><meta name="string_finder.js"></head>
+
+<body>
+<table width="760" border="2" align="center" cellpadding="0" cellspacing="0" bgcolor="#000000">
+  <tbody><tr>
+    <td><table width="720" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tbody><tr>
+        <td><div align="center">
+          <img src="./Stepperworld Bipolar Tutorial_files/swstrip.png" width="720" height="120">
+          <table width="628" border="0" cellspacing="5" cellpadding="0">
+            <tbody><tr>
+              <td width="84"><a href="http://www.stepperworld.com/index.htm"><img src="./Stepperworld Bipolar Tutorial_files/bnHome.gif" name="Image7" width="84" height="24" border="0"></a></td>
+              <td width="10">&nbsp;</td>
+              <td width="17">&nbsp;</td>
+              <td width="119"><a href="http://www.stepperworld.com/Tutorials/pgUnipolarTutorial.htm"><img src="./Stepperworld Bipolar Tutorial_files/bnUnipolar.gif" name="Image73" width="119" height="24" border="0" id="Image73"></a></td>
+              <td width="119"><a href="./Stepperworld Bipolar Tutorial_files/Stepperworld Bipolar Tutorial.htm"><img src="./Stepperworld Bipolar Tutorial_files/bnBipolar.gif" name="Image74" width="119" height="24" border="0" id="Image74"></a></td>
+              <td width="119"><a href="http://www.stepperworld.com/Tutorials/pgCurrentControl.htm"><img src="./Stepperworld Bipolar Tutorial_files/bnCurrentControl.gif" name="Image75" width="119" height="24" border="0" id="Image75"></a></td>
+              <td width="119"><div align="right"><a href="http://www.stepperworld.com/Tutorials/pgMicrostepping.htm"><img src="./Stepperworld Bipolar Tutorial_files/bnMicrostepping.gif" name="Image76" width="119" height="24" border="0" id="Image76"></a></div></td>
+            </tr>
+          </tbody></table>
+          </div></td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+</tbody></table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="25" bgcolor="#FFFFFF">
+  <tbody><tr>
+    <td> <font size="-1">Copyright Notice: (C) June 2000 by Russell Laidman. All Rights Reserved.</font> <br>        <font size="-1">------------------------------------------------------------------------------------</font> <br>  
+            <font size="-1">The material contained in this project, including Tutorials, Documentation, and Software is copyright protected. You are not permitted to re-distribute any part without specific written permission from the author. Many of the figures contain material from <a href="http://www.cs.uiowa.edu/~jones/step">Douglas Jones's stepping motor tutorial</a>; this material is used with his permission. </font><font size="-1">For additional information, please contact admin at Stepperworld.com</font>
+            <p><font size="+2">Stepper Motors and Control</font> <br>
+            <strong><font size="+1">Part II - Bipolar Stepper Motor and Control</font></strong> <br>
+            <font size="-1">(c) 1999 by Rustle Laidman, All Rights Reserved</font>
+      </p><p><b>Introduction</b>
+      </p><p>The Bipolar Stepper motor is very similar to the Unipolar Stepper discussed in part I of this Tutorial, except that the motor coils lack center taps.&nbsp; Because of this, the Bipolar motor requires a different type of controller, one that reverses the current flow through the coils by alternating polarity of the terminals, giving us the name - Bipolar.&nbsp; A Bipolar motor is capable of higher torque since entire coil(s) may be energized, not just half-coils.&nbsp; Where 4-wire steppers are strictly 'Bipolar', 5 and 6 wire motors with center-taps can be used with the Bipolar controller.
+      </p><p><b>Bipolar Basics</b>
+      </p><p>The Bipolar Stepper motor has 2 coils.&nbsp; The coils are identical and are not electrically connected. You can identify the separate coils by touching the terminal wires together-- If the terminals of a coil are connected, the shaft becomes harder to turn.
+            </p><center>
+              <img src="./Stepperworld Bipolar Tutorial_files/bcoils.gif" alt="Bipolar Stepper Motor" width="198" height="135" nosave="">
+            </center>
+      <p>The Bipolar Controller must be able to reverse the polarity of the voltage across either coil, so current can flow in both directions. And, it must be able to energize these coils in sequence.&nbsp; Let us look at the mechanism for reversing the voltage across one of the coils...
+      </p><center>
+          <p><img src="./Stepperworld Bipolar Tutorial_files/bridge.gif" alt="H-Bridge" width="259" height="193" nosave="">
+      </p></center>
+        <p>This circuit is called an H-Bridge, because it resemble a letter "H". The current can be reversed through the coil by closing the appropriate switches - AD to flow one direction then BC to flow the opposite.
+        </p><center>
+          <p><img src="./Stepperworld Bipolar Tutorial_files/bamp.gif" alt="H-Bridge" width="430" height="109" nosave="">
+        </p></center>
+        <p>Another way of depicting the H-Bridge... Since each half of the bridge can both sink and source current, it qualifies as a push-pull type amplifier, and can be drawn with the symbol for the amplifier.
+        </p><p>H-bridges are applicable not only to the control of stepping motors, but also to the control of DC motors, solenoids and many other applications, where polarity reversal is needed.&nbsp; Diodes protect the switches from the kickback of inductive type loads, such as the coils of a stepper.
+        </p><p>Two such circuits are needed to drive both coils of the Bipolar stepper, and is commonly called a "Dual H-Bridge." <br>
+&nbsp; <br>
+&nbsp; <br>
+    <br>
+        </p><center>
+          <p><b>Conceptual Model of Bipolar Stepper Motor</b>
+          </p><p><img src="./Stepperworld Bipolar Tutorial_files/bmodel.gif" alt="Bipolar Stepper Motor" width="327" height="301" nosave="">
+        </p></center>
+        <p>The coils are activated, in sequence, to attract the rotor, which is indicated by the arrow in the picture.&nbsp; (Remember that a current through a coil produces a magnetic field.)&nbsp; This conceptual diagram depicts a 90 degree step per phase.&nbsp; Assuming Terminal 1a is positive and 1b is negative, the rotor points to the East in this diagram.&nbsp; If these two terminals were reversed in polarity the rotor would point to the West.&nbsp; Coil 2 is entirely de-activated in the diagram.
+        </p><p>In a basic "Wave Drive" clockwise sequence, winding 1 is de-activated and winding 2 activated to advance to the next phase. The rotor is guided in this manner from one winding to the next, producing a continuous cycle.&nbsp; Note that if two adjacent windings&nbsp; are activated, the rotor is attracted mid-way between the two windings.
+        </p><p>The following table describes 3 useful stepping sequences and their relative merits.&nbsp; The polarity of terminals is indicated with +/-.&nbsp; After the last step in each sequence the sequence repeats.&nbsp; Stepping backwards through the sequence reverses the direction of the motor.&nbsp; Note that these sequences are identical to those for a Unipolar Stepper Motor. <br>
+&nbsp; <br>
+&nbsp; <br>
+&nbsp;
+        </p><center>
+          <table border="" cellpadding="10" width="90%" bgcolor="#CCCCCC">
+            <caption>
+            Table of Stepping Sequences
+            </caption>
+            <tbody><tr bgcolor="#999999">
+              <td><u>Sequence</u></td>
+              <td><u>Polarity</u></td>
+              <td><u>Name</u></td>
+              <td><u>Description</u></td>
+            </tr>
+            <tr>
+              <td><div align="center"><tt>0001</tt><br>
+                  <tt>0010</tt><br>
+                  <tt>0100</tt><br>
+                  <tt>1000</tt></div></td>
+              <td><div align="center"><tt>---+</tt><br>
+                <tt>--+-</tt><br>
+                <tt>-+--</tt><br>
+                <tt>+---</tt></div></td>
+              <td valign="TOP">Wave Drive, One-Phase</td>
+              <td valign="TOP">Consumes the least power. Only one phase is energized at a time. Assures positional accuracy regardless of any winding imbalance in the motor.</td>
+            </tr>
+            <tr align="LEFT" valign="TOP" bgcolor="#ECECEC">
+              <td><div align="center"><tt>0011</tt><br>
+                  <tt>0110</tt><br>
+                  <tt>1100</tt><br>
+                  <tt>1001</tt></div></td>
+              <td><div align="center"><tt>--++</tt><br>
+                <tt>-++-</tt><br>
+                <tt>++--</tt><br>
+                <tt>+--+</tt></div></td>
+              <td>Hi-Torque, Two-Phase</td>
+              <td>Hi Torque - This sequence energizes two adjacent phases, which offers an improved torque-speed product and greater holding torque.</td>
+            </tr>
+            <tr valign="TOP">
+              <td><div align="center"><tt>0001</tt><br>
+                  <tt>0011</tt><br>
+                  <tt>0010</tt><br>
+                  <tt>0110</tt><br>
+                  <tt>0100</tt><br>
+                  <tt>1100</tt><br>
+                  <tt>1000</tt><br>
+                  <tt>1001</tt></div></td>
+              <td><div align="center"><tt>---+</tt><br>
+                <tt>--++</tt><br>
+                <tt>--+-</tt><br>
+                <tt>-++-</tt><br>
+                <tt>-+--</tt><br>
+                <tt>++--</tt><br>
+                <tt>+---</tt><br>
+                <tt>+--+</tt></div></td>
+              <td>Half-Step</td>
+              <td>Half Step - Effectively doubles the stepping resolution of the motor, but the torque is not uniform for each step.&nbsp; (Since we are effectively switching between Wave Drive and Hi-Torque with each step, torque alternates each step.)&nbsp; This sequence reduces motor resonance which can sometimes cause a motor to stall at a particular resonant frequency.&nbsp; Note that this sequence is 8 steps.</td>
+            </tr>
+          </tbody></table>
+        </center>
+        <br>
+      &nbsp;
+        <p><b>Identifying Stepper Motors</b>
+        </p><p>Stepper motors have numerous wires--4,5,6, or 8.&nbsp; When you turn the shaft you will usually feel a "notched" movement.&nbsp; Motors with 4 wires require a Bipolar controller, such as the Dual H-Bridge.&nbsp; Others may be used with either a Unipolar or Bipolar controller.&nbsp; You can use an Ohm-meter to find the center tap-- the resistance between the center and a leg is 1/2 that from leg to leg.&nbsp; Measuring from one coil to the other will show an open circuit.
+        </p><center>
+          <p><img src="./Stepperworld Bipolar Tutorial_files/bidentify.gif" alt="Stepper Motors" width="494" height="372" nosave="">
+        </p></center>
+        <p>One of the benefits of the Bipolar drive circuitry is that it allows us to use both "Bipolar" and "Unipolar" motors. Bipolar motors are simply Unipolar without the center taps, which simplifies construction of the motor.&nbsp; So we can drive 4,6, and 8 wire steppers.&nbsp; Furthermore, <b><i>Unipolar motors may be used in 2 different configurations</i></b>-- One, simply ignore the center taps. Two, use half the coil only by using the center tap and one of the terminals.&nbsp; This will produce less hold torque but allows higher top speeds because of the lower inductance.
+        </p><center>
+          <p><img src="./Stepperworld Bipolar Tutorial_files/bdiag1.gif" alt="Stepper Motor" width="472" height="201" nosave="">
+        </p></center>
+        <p><br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </p><p><b>Shortcut for finding the proper wiring sequence</b>
+        </p><p>Connect the 4 coil wires to the controller in any pattern.&nbsp; If it doesn't work at first, you only need try these 2 swaps...
+        </p><p>&nbsp;&nbsp; 1&nbsp; 2&nbsp;&nbsp; 4&nbsp;&nbsp; 8&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; (arbitrary first wiring order) <br>
+      &nbsp;&nbsp; 1&nbsp; 2&nbsp;&nbsp; 8&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; switch end pair <br>
+      &nbsp;&nbsp; 1&nbsp; 8&nbsp;&nbsp; 2&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; -&nbsp; switch middle pair
+        </p><p>You're finished when the motor turns smoothly in either direction. If the motor turns in the opposite direction from desired, reverse the wires so that&nbsp; ABCD would become DCBA. <br>
+&nbsp;
+        </p><p><b>Selecting a current limiting resistor</b>
+        </p><p>It is important that neither the motor nor controller exceed their rated currents.&nbsp; The value of a current-limiting resistor in series with the motor can be determined from the following equation... <br>
+&nbsp;
+        </p><p>Vsupply = Vdrop + (i * Rmotor) + (i * Rlimit)
+        </p><p>Vdrop&nbsp; = voltage drop of Transistors used (2 volts for Unipolar, 4 volts for Bipolar Drivers) <br>
+    i&nbsp;&nbsp; = current in circuit <br>
+    Rmotor = resistance of single motor coil <br>
+    Rlimit&nbsp; = current limiting power resistor
+        </p><p>The objective is to find Rlimit that satisfies the desired current rating i
+        </p><p>For example, Using a power supply of 12 volts, what current limiting resistor should be chosen to deliver 1 amp of current to a motor with a coil resistance of 5 ohms?&nbsp;&nbsp; Assume 2 volt drop due to the transistors.
+        </p><p>12v = 2v + (1 amp * 5 ohm) + (1 amp * Rlimit)
+        </p><p>12v = 2v + (5v) + (1 amp * Rlimit)
+        </p><p>5v = 1 amp * Rlimit
+        </p><p>Rlimit = 5v / 1 amp = 5 ohm
+        </p><p>What will the voltage be across this resistor? 5v <br>
+          What current will flow through this resistor? 1a <br>
+          What power rating should this resistor be? 5v * 1a = 5 watt, minimum
+        </p><p>This calculation is for determining the current in a single coil.&nbsp; Most motors and stepper circuits are rated in terms of this coil rating - amps per phase.&nbsp; If the hi-torque, or half-step sequence is to be used, then more than 1 coil will be activated, thus more current will be required of the power supply.
+        </p><p>Ideally, two matched current limiting resistors should be used, one in series with each of the 2 motor coils.&nbsp; (The Unipolar driver can&nbsp; get away with sharing a single power resistor, with&nbsp; the center taps tied together.)&nbsp; Here is the configuration for the Bipolar Controller... <br>
+&nbsp; <br>
+&nbsp; <br>
+    <br>
+        </p><p>
+          </p><center>
+            <b>Current Limiting with Bipolar Controller</b> <br>
+            <img src="./Stepperworld Bipolar Tutorial_files/blimit.gif" alt="Current Limiting" width="400" height="201" nosave="">
+          </center>
+          <b>Heat Considerations</b>
+        <p>Over-heating can be an early indicator of a problem or need for additional heat sinking.&nbsp; This is true of both the controller and motors.&nbsp; Components can be warm to the touch, but not so hot that you can't leave your finger on them for a few seconds.
+        </p><p>Motors are designed to be mounted in such a way that heat is drawn away from the motors.&nbsp; This is usually accomplished with a metal mounting bracket.&nbsp; Motors that are not yet mounted may require some type of temporary heat sinking.&nbsp; Motors heat more running at the LOW speeds or in Hold Mode.
+        </p><p>If a component or motor is running too hot, try using the Wave Drive stepping mode only, if it still runs too hot, try heat sinking, and/or a fan.&nbsp; If it still runs too hot, something is wrong.
+        </p><p>In summation, make your calculations carefully, and always apply caution when making any kind of modification to a circuit.&nbsp; Check the circuit often for over-heating.
+        </p><p><b>This is the end of the Bipolar Tutorial.&nbsp; At this time, please refer to the documentation that accompanies your particular project for precautions and further information.</b>
+    </p><p><b><font size="+2"><font color="#FF0000">Visit the</font> <a href="http://www.stepperworld.com/" target="_top">www.Stepperworld.com</a><font color="#FF0000">web site</font></font></b>      </p></td></tr>
+</tbody></table>
+
+
+</body><span id="skype_highlighting_settings" display="none" autoextractnumbers="1"></span><object id="skype_plugin_object" location.href="http://www.stepperworld.com/Tutorials/pgBipolarTutorial.htm" location.hostname="www.stepperworld.com" style="position: absolute; visibility: hidden; left: -100px; top: -100px; " width="0" height="0" type="application/x-vnd.skype.toolbars.npplugin.4.2.0"></object></html>

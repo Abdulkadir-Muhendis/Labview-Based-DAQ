@@ -1,0 +1,19 @@
+/* CSS Document */
+a,a:link,a:visited{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+
+#searchbox_content{
+	padding-left:10px;
+}
+#search_button{
+	width:100px;
+}
+
+#columnCenter{
+	margin-left:10px;
+	margin-right:10px;
+}
