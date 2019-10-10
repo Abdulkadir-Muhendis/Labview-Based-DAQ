@@ -4,7 +4,6 @@
 ' * Last Updated  : 26.07.2011                                                 *
 ' * Target Board  : Phoenix - REV 1.00                                         *
 ' * Target MCU    : ATMega128A                                                 *
-' * Author        : Walid Balid                                                *
 ' * IDE           : BASCOM AVR 2.0.7.0                                         *
 ' * Peripherals   : RC5 Receiver; LCD                                          *
 ' * Description   : RC5 Code with 4bit LCD Mode                                *
@@ -52,15 +51,15 @@ Return
 'Acis1 = 0 : Acis0 = 0
 
 'Special Function I/O Register SFIOR
-'Bit 3 – ACME: Analog Comparator Multiplexer Enable...
+'Bit 3 â€“ ACME: Analog Comparator Multiplexer Enable...
    'When this bit is "1" and the ADC is switched off (ADEN in ADCSRA is zero),
    'the ADC multiplexer selects the negative input to the Analog Comparator.
 
    'When this bit is written logic zero, AIN1 is applied to the negative input
    'of the Analog Comparator.
 
-'Analog Comparator Control and Status Register – ACSR
-'Bit 6 – ACBG: Analog Comparator Bandgap Select
+'Analog Comparator Control and Status Register â€“ ACSR
+'Bit 6 â€“ ACBG: Analog Comparator Bandgap Select
    'When this bit is set, a fixed bandgap reference voltage (1.30 V) replaces
    'the positive input to the Analog Comparator.
 
