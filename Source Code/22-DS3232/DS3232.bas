@@ -4,7 +4,6 @@
 ' * Last Updated  : 02.08.2011                                                 *
 ' * Target Board  : Phoenix - REV 1.00                                         *
 ' * Target MCU    : ATMega128A                                                 *
-' * Author        : Walid Balid                                                *
 ' * IDE           : BASCOM AVR 2.0.7.0                                         *
 ' * Peripherals   : RTC Unit                                                   *
 ' * Description   : 4bit LCD Mode                                              *
