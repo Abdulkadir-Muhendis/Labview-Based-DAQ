@@ -1,4 +1,3 @@
-' ******************************************************************************
 ' * Title         : Data Acquisition System for phoenix AVR Supplied with Scada*
 ' * Version       : 1.0                                                        *
 ' * Last Updated  : 30.07.2011                                                 *
