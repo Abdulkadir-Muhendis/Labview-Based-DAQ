@@ -9,7 +9,6 @@
 ' * Description   : GPIOs as Input; Active High                                *
 ' ******************************************************************************
 ' Place the Jumbers: RLY.En (Activate Relay)
-'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 '-----------------------[Definitions]
 $regfile = "m128def.dat"
 $crystal = 8000000
